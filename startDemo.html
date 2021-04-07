@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>DA Information</title>
+		<link rel="icon" href="/images/da_symbol.png">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="static/demo/assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>DA INFORMATION</h1>
+				<p>Video conferencing solution<br />
+				by <a href="http://www.dainform.com/">DA Information</a>.</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				<input type="text" name="room_field" id="room_field" placeholder="Room Name" />
+				<input type="submit" value="Enter"  onclick="enterRoomButton()"/>
+			</form>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Demo ver.</li><li><a href="http://www.dainform.com/">DA Information</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="static/demo/assets/js/main.js"></script>
+			<script type="text/javaScript">
+				const rootDomain = window.location.protocol + "//" + window.location.host + "/";
+			                              
+				function enterRoomButton(){
+					let roomName = document.getElementById("room_field").value;
+                                        var special_pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+
+					if(roomName == "" || roomName == null){
+						alert("방이름을 입력하세요.");
+						return;
+					}
+					else{
+						if(special_pattern.test(roomName) == true){
+                                                     alert("방이름에 특수문자는 사용할 수 없습니다.");
+						}else{
+							location.href = rootDomain + roomName;
+						}
+					}
+				}
+			</script>
+	</body>
+</html>

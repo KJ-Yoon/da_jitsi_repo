@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+div#parents-start-page {
+	width: 100%;
+	height:100%;
+	position:absolute;
+
+	z-index:100;
+	top: 0;
+	left: 0;
+	background-color : #efefef;
+	
+}
+div#child-start-page {
+	width: 100%;
+	height: 100%;
+}
+
+
+</style>
+<div id = "parents-start-page">
+	<div id = "child-start-page">	
+		<input type="button" value="enterPage" onclick="enterStartPageButton()"/>
+	<div>
+<div>
+<script type="text/javaScript">
+
+	
+	const rootDomain = window.location.protocol + "//" + window.location.host + "/";
+	//const rootDomain = "https://localhost:8080/";
+	//const rootDomain = "https://meet.dainform.com/";
+	
+	function startIndexYN(){
+            	
+		let url = document.location.href;
+
+		if(rootDomain == url){
+			return;
+		}else{
+			document.getElementById("parents-start-page").style.display="none";
+		}
+	}
+	startIndexYN();
+
+	function enterStartPageButton(){		
+		//location.href=document.location.href + "startDemo.html"; 
+		location.href=rootDomain + "startPage.html";
+	}
+</script>
+</html>
